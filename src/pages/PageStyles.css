@@ -1,0 +1,7 @@
+.container {
+  min-height: 67vh;
+}
+.home.container h2 {
+  padding-top: 9rem;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+export const countryCodeArray = [
+  'au',
+  'be',
+  'cz',
+  'de',
+  'fr',
+  'gb',
+  'gr',
+  'it',
+  'jp',
+  'kr',
+  'lt',
+  'lv',
+  'pl',
+  'se',
+  'sk',
+  'us',
+];
