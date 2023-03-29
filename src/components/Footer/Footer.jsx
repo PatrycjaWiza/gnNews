@@ -9,12 +9,12 @@ export const Footer = ({ noOfArticles }) => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 60000);
-    const updatedTime = time.toLocaleTimeString('pl', {
+    const timeFormat = time.toLocaleTimeString('pl', {
       hour: 'numeric',
       hour12: false,
       minute: 'numeric',
     });
-    setTheTime(updatedTime);
+    setTheTime(timeFormat);
     return clearInterval(timer);
   }, [time]);
 

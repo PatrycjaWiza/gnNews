@@ -12,7 +12,7 @@ export const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/country" element={<CountryPage />} />
+          <Route path="/country/:countryCode" element={<CountryPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>

@@ -3,9 +3,16 @@ import './HeaderStyles.css';
 import { Popup } from 'components/Popup/Popup';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleStyle } from 'redux/actions';
+import { selectViewState } from 'redux/selector';
 
 export const Header = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const dispatch = useDispatch();
+  const viewStyle = useSelector(selectViewState);
+
+  window.localStorage.setItem('viewStyle', JSON.stringify(viewStyle));
 
   return (
     <div className="navbar bg-light">
@@ -34,8 +41,16 @@ export const Header = () => {
           </svg>
           <span className="visually-hidden">Button</span>
         </button>
-        {/* buttons: list/grid */}
-        <button type="button" className="btn btn-outline-secondary">
+        {/* buttons: list */}
+        <button
+          type="button"
+          className={
+            viewStyle === 'list'
+              ? 'btn btn-outline-secondary active'
+              : 'btn btn-outline-secondary'
+          }
+          onClick={() => dispatch(toggleStyle('list'))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -49,7 +64,16 @@ export const Header = () => {
           </svg>
           <span className="visually-hidden">Button</span>
         </button>
-        <button type="button" className="btn btn-outline-secondary">
+        {/* buttons: grid */}
+        <button
+          type="button"
+          className={
+            viewStyle === 'grid'
+              ? 'btn btn-outline-secondary active'
+              : 'btn btn-outline-secondary'
+          }
+          onClick={() => dispatch(toggleStyle('grid'))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

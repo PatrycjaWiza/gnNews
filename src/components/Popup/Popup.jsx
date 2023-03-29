@@ -17,15 +17,18 @@ export const Popup = ({ closePopup }) => {
           </div>
           <div className="modal-body">
             <p>
-              The most enjoable was CSS styling ❤ Magic of Bootstrap saves so
-              much time (at least for such beginners like me). <br />
-              <br /> The hardest currently is Redux logic, so many requirements
-              for easy things... Personally prefer playing with React, probably
-              due to easiness of projects I've been working with. However I
-              believe that with more programming experience my attitude will
-              change 😊
+              The most enjoable for me is to find a logic path to accomplish
+              certain task. Seeing then results of clickable application makes
+              me very satisfied and happy of my work. This is what moves me
+              forward and motivates. <br />
+              <br /> The hardest for me right now is Redux, so many requirements
+              which at the beginning may be somehow confusing... However I do
+              understand the easiness of using one store in more complex
+              projects when passing through props between components can be a
+              burden.
               <br />
-              <br />I am excited to see that happen!
+              <br />I am excited to see myself becoming experienced (fluent)
+              programmer.😃
             </p>
           </div>
         </div>

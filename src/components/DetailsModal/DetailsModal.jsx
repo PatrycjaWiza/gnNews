@@ -16,17 +16,18 @@ export const DetailsModal = ({ closePopup, news }) => {
             ></button>
           </div>
           <div className="modal-body">
-            <p>
+            <p className="modal-text">
               {news.content === null
                 ? 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
                 : news.content}
             </p>
+
             <div className="modal-footer">
               <a
                 href={news.url}
                 target="_blank"
                 rel="noreferrer"
-                className="nav-link px-2 text-muted"
+                className="btn btn-primary"
               >
                 Click the link here to see the entire article.
               </a>

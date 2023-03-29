@@ -1,8 +1,10 @@
 import './SideBarStyles.css';
+
 import ReactCountryFlag from 'react-country-flag';
 import { nanoid } from 'nanoid';
+import { Link } from 'react-router-dom';
 
-export const SideBar = ({ countryCodeArray, passCountryCode }) => {
+export const SideBar = ({ countryCodeArray }) => {
   return (
     <>
       <button
@@ -41,14 +43,14 @@ export const SideBar = ({ countryCodeArray, passCountryCode }) => {
             aria-label="Close"
           ></button>
         </div>
-        <div className="offcanvas-body">
+        <div className="offcanvas-body" data-bs-dismiss="offcanvas">
           <div className="list-group">
             {countryCodeArray.map(item => (
-              <button
+              <Link
+                to={`country/${item}`}
                 key={nanoid()}
                 type="button"
                 className="list-group-item list-group-item-action"
-                onClick={() => passCountryCode(item)}
               >
                 <ReactCountryFlag
                   className="country-flag"
@@ -56,7 +58,7 @@ export const SideBar = ({ countryCodeArray, passCountryCode }) => {
                   svg
                 />
                 <ReactCountryFlag countryCode={item} />
-              </button>
+              </Link>
             ))}
           </div>
         </div>
